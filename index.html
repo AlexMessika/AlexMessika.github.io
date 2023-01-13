@@ -1,31 +1,65 @@
-<!DOCTYPE html>
-
 <html>
 
-
-
 <head>
-    <title>My Web Page</title>
+    <title>Photo and Text Web Page</title>
     <style type="text/css">
         body {
-            background-color: #f2f2f2;
             font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
         }
         
-        h1 {
-            color: #333333;
+        #main {
+            width: 800px;
+            margin: 0 auto;
         }
         
-        p {
-            font-size: 14px;
-            line-height: 1.5em;
+        #header {
+            padding: 20px 0;
+            text-align: center;
+            background-color: #008080;
+            color: white;
+            font-size: 24px;
+        }
+        
+        #photo {
+            float: left;
+            width: 400px;
+            padding-right: 20px;
+        }
+        
+        #photo img {
+            width: 100%;
+            /* make sure the photo takes up the full width */
+            /* of the photo div */
+            border-radius: 10px;
+            /* give the photo rounded corners */
+        }
+        
+        #text {
+            /* this is where we'll put our text content */
+            float: right;
+            width: 350px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Welcome to My Web Page!</h1>
-    <p>This is my web page. I hope you like it!</p>
+    <div id="main">
+        <div id="header"> Photo and Text Web Page </div>
+        <!-- this is where we'll put our content -->
+        <div id="content">
+            <!-- first, let's add our photo -->
+            <div id="photo">
+                <!-- add your image here --><img src="yourimage.jpg" alt="My Photo" /> </div>
+            <!-- now, let's add our text content -->
+            <div id="text">
+                <!-- add your text content here -->Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </div>
+        </div>
+        <!-- end content div -->
+    </div>
+    <!-- end main div -->
 </body>
 
 </html>
