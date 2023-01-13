@@ -1,65 +1,104 @@
 <html>
 
+
 <head>
-    <title>Photo and Text Web Page</title>
+    <title>Ley Gallery</title>
     <style type="text/css">
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-        
-        #main {
-            width: 800px;
-            margin: 0 auto;
-        }
-        
-        #header {
-            padding: 20px 0;
+            background-color: black;
+            font-size: 100%;
             text-align: center;
-            background-color: #008080;
-            color: white;
-            font-size: 24px;
         }
         
-        #photo {
-            float: left;
-            width: 400px;
-            padding-right: 20px;
+        @keyframes move-letters {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
         }
         
-        #photo img {
+        p {
+            background-color: black;
+            animation: move-letters 1s ease-in-out;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 36px;
+            text-align: center;
+        }
+        
+        img {}
+        
+        img h1 {
+            font-size: 300%;
+            text-align: center;
+        }
+        
+        h2 {
+            text-align: center
+        }
+        
+        h2 img {
+            width: 20%;
+            height: auto;
+            margin: 5px;
+            background-color: black;
+        }
+        
+        .fullscreen {
+            position: absolute;
+            top: 100%;
+            left: 100%;
             width: 100%;
-            /* make sure the photo takes up the full width */
-            /* of the photo div */
-            border-radius: 10px;
-            /* give the photo rounded corners */
+            height: 100%;
+            background-color: black;
         }
         
-        #text {
-            /* this is where we'll put our text content */
-            float: right;
-            width: 350px;
+        .fullscreen img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
+
+    <script type="text/javascript">
+        function showImage(imgSrc) {
+
+            let fullscreen = document.getElementById("fullscreen");
+
+            let fullscreenImg = document.getElementById("fullscreen-img");
+
+            fullscreenImg.src = imgSrc;
+
+            fullscreen.style.display = "block";
+
+            window.scrollTo(0, document.body.scrollHeight);
+
+            fullscreenImg.onclick = function() { // when the image is clicked, close the full screen view  
+
+                fullscreen.style.display = "none"; // hide the full screen div again  
+
+            };
+
+        }
+    </script>
 </head>
 
 <body>
-    <div id="main">
-        <div id="header"> Photo and Text Web Page </div>
-        <!-- this is where we'll put our content -->
-        <div id="content">
-            <!-- first, let's add our photo -->
-            <div id="photo">
-                <!-- add your image here --><img src="yourimage.jpg" alt="My Photo" /> </div>
-            <!-- now, let's add our text content -->
-            <div id="text">
-                <!-- add your text content here -->Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </div>
-        </div>
-        <!-- end content div -->
-    </div>
-    <!-- end main div -->
+    <h1 style='color:rgb(255, 255, 255)'>Allez bg, on se relève ;)
+    </h1>
+    <!-- 6 images --><img src="image1.jpg" onclick="showImage('image1.jpg')" /> <img src="image2.jpg" onclick="showImage('image2.jpg')" /> <img src="image4.jpg" onclick="showImage('image4.jpg')" /> <img src="image3.jpg" onclick="showImage('image3.jpg')" /> <img src="image5.jpg"
+        onclick="showImage('image5.jpg')" /> <img src="image6.jpg" onclick="showImage('image6.jpg')" /> <img src="image7.jpg" onclick="showImage('image7.jpg')" /><img src="image8.jpg" onclick="showImage('image8.jpg')" /><img src="image9.jpg" onclick="showImage('image9.jpg')"
+    />
+    <!-- Full screen view -->
+    <h2 id="fullscreen">
+        <!-- The image to show in full screen --><img id="fullscreen-img" />
+        <!-- Text message -->
+        <p style='color:rgb(129, 219, 225)'>Je sais que t'as envie de retrouver ta force mais t'as aussi besoin de gens pour te rappeller que t'es invincible tant qu'on est derrière</p>
+    </h2>
 </body>
+
+
 
 </html>
